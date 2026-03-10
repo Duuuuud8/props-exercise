@@ -15,12 +15,16 @@ function App ()
 
 	return (
 		<div>
-			<h1>Inventory</h1>
+			<h1><u>Spacecraft Inventory</u></h1>
 			<ol>
-				<!-- TODO: Render each inventory item as a list item. -->
+				{inventoryItems.map((item, index) => (
+					<li key={index}>
+					<InventoryItem  
+						{...item}
+					/>
+					</li>
+				))}
 			</ol>
 		</div>
 	);
 }
-
-ReactDOM.render(<App />, document.getElementById("root"));
